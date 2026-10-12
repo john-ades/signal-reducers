@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "measurement_date": "2026-10-12",
+  "source_scope": "Frozen pre-cleanup P0; historical evidence is not qualification of the modified alpha release.",
+  "environment": {
+    "os": "macOS",
+    "architecture": "arm64 (Apple Silicon)",
+    "python": "3.14.4",
+    "routing_device": "cpu",
+    "routing_threads": 4
+  },
+  "models": {
+    "router": "convaiinnovations/laya-typed-decisions",
+    "router_revision": "e929ae5cf69bc34259cd2f95c9e91145b818b1f0",
+    "gate": "nace-ai/drex-v1.5",
+    "reducers": "openai/gpt-4.1-mini",
+    "system2": "openai/gpt-5.1"
+  },
+  "provenance": {
+    "frozen_source_manifest_sha256": "9afaebcc490232abaf6d5590f728f2846911a76a9ec7791e837f6e777734ec74",
+    "source_files_recorded": 24,
+    "dataset_sha256": "041ec6daef323b8cb69df13758b5eadd694d5fc82e47d383b383c924114d33e0",
+    "router": {
+      "checkpoint_sha256": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e",
+      "tokenizer_sha256": "b18f7e0a37790c603f2bdc74df379ee96251cb35f3de955f7248ddd8bd048c24",
+      "configuration_sha256": "5146ecaada98c384e32226fda2fc98592924cdc69966395df1abd5e7f8b7ea8b",
+      "prompt_sha256": "5f3d63567929f9cd6d499f5edf6207b9f4cb19f4fb4b27a6694439964aafe1d9",
+      "registry_sha256": "b0e76c7c9908bbfb66b666a646a670136e01c91b0c0fd59f304a19f68466abfa",
+      "input_projection_sha256": "fdf86554787afb9aaa6d690d77c072b80eb74fb96150b8532fbccb000238b426"
+    },
+    "private_report_sha256": {
+      "findings": "b16a515550bf8422839a1a1fab4521693ea05c39c6f3da088f2638430b23dee2",
+      "workflow_runtime_audit": "5a9bc5fa055fc3f1a9c91d43ad3164d69043f0e96b86af441436853e2af0dad8",
+      "workflow_factual_review": "72fc68d3f88cd90620117dd56fd77ba4c8eced186b57bef1549f316932cc493d",
+      "router_heldout": "50d1d0bc1b6a4a1c5cd41639a21269a5491c000addc8282d8fa2f657f0b2ba7b",
+      "thinking_profiles": "ff3e319461b4914723eb720b13b9876cf7b2606172b5cdb45c71a055a754f88b",
+      "idle": "ea323cd60bc0905332fce105fc4a56b0a501662d2fb80305d90f2074fc6ba9f5",
+      "burst": "6fa26f2ea1d455a39c88848fa8be621b5489da2fb75eab01dfa909af9065ae98"
+    }
+  },
+  "conformance": {
+    "passed": 205,
+    "failed": 0,
+    "duration_seconds": 18.61,
+    "scope": "Deterministic production-contract and failure tests with fixture/mocked model boundaries and isolated real Redis; hosted model behavior is measured separately."
+  },
+  "targeted_live": {
+    "cases": 13,
+    "passed_cases": 13,
+    "reducer_cases": 6,
+    "drex_cases": 7,
+    "scope": "Synthetic captured inputs, real OpenRouter reducers and DREX, real atomic state validation; no System 2 call and no Laya in this targeted suite.",
+    "request_counts": {
+      "reducer_telemetry": 2,
+      "reducer_conversation": 3,
+      "reducer_simulated_video": 1,
+      "system1": 7
+    }
+  },
+  "multi_domain_gate_contexts": {
+    "cases": 5,
+    "passed_cases": 5,
+    "scope": "Real DREX plus immutable state, synthetic multi-domain captured context and prerequisite results; no Laya or System 2 calls.",
+    "max_request_bytes": 11005,
+    "application_request_bound_bytes": 12000
+  },
+  "router_heldout": {
+    "cases": 80,
+    "history": "predicted_previous_decisions",
+    "exact_set_accuracy": 0.8875,
+    "exact_sets_correct": 71,
+    "routing_error_cases": 9,
+    "micro_precision": 0.8805970149253731,
+    "recall": {
+      "conversation": 0.95,
+      "telemetry": 1.0,
+      "simulated_video": 1.0
+    },
+    "no_destination_specificity": 0.75,
+    "signals_per_second": 0.878483405456306,
+    "p95_seconds": 1.6449134169961326,
+    "peak_process_rss_bytes": 1902673920,
+    "rss_scope": "whole process including checkpoint loading, interpreter and any test overhead",
+    "original_quality_target_passed": false,
+    "original_performance_target_passed": false,
+    "initial_throughput_target_signals_per_second": 1,
+    "checkpoint_runtime_warning": "Laya clamps an invalid checkpoint temperature to 0.5; affected confidence is uncalibrated."
+  },
+  "routing_accuracy_exception": {
+    "accepted_for_p0": true,
+    "scope": "Historical routing error rate only; no CPU throughput or factual-quality waiver."
+  },
+  "thinking_profiles": {
+    "samples_per_level": 1,
+    "same_immutable_synthetic_context": true,
+    "scope": "One sample per thinking level checks provider controls and bounded answers; it does not establish general quality or a benefit from additional thinking.",
+    "profiles": [
+      {
+        "thinking_level": "none",
+        "reasoning_effort": "none",
+        "reasoning_exclude": true,
+        "passed": true,
+        "http_attempts": 1,
+        "result_status": "success",
+        "latency_seconds": 1.861935,
+        "reasoning_tokens": 0,
+        "completion_budget_present": false,
+        "tools_present": false
+      },
+      {
+        "thinking_level": "some",
+        "reasoning_effort": "low",
+        "reasoning_exclude": true,
+        "passed": true,
+        "http_attempts": 1,
+        "result_status": "success",
+        "latency_seconds": 3.505628,
+        "reasoning_tokens": 104,
+        "completion_budget_present": false,
+        "tools_present": false
+      },
+      {
+        "thinking_level": "extra",
+        "reasoning_effort": "high",
+        "reasoning_exclude": true,
+        "passed": true,
+        "http_attempts": 1,
+        "result_status": "success",
+        "latency_seconds": 9.753408,
+        "reasoning_tokens": 977,
+        "completion_budget_present": false,
+        "tools_present": false
+      }
+    ]
+  },
+  "idle": {
+    "measured_idle_seconds": 30.001180624996778,
+    "idle_inference_delta": {
+      "hosted": {
+        "reducer_conversation": 0,
+        "reducer_telemetry": 0,
+        "reducer_simulated_video": 0,
+        "system1": 0,
+        "system2": 0
+      },
+      "native_predictions": 0
+    },
+    "inspection_samples": 582,
+    "inspection_p95_ms": 0.6807500030845404,
+    "scope": "Thirty-second idle window after one real CPU Laya routing and hosted telemetry/DREX evaluation; independent transient Redis."
+  },
+  "simultaneous_burst": {
+    "admitted": 100,
+    "popped": 100,
+    "processed_reports": 50,
+    "expired_before_routing": 50,
+    "signal_max_age_seconds": 60,
+    "duplicate_reports_suppressed": 49,
+    "telemetry_inferences": 1,
+    "snapshots": 1,
+    "system1_evaluations": 2,
+    "system2_inferences": 0,
+    "suppression_checks_passed": true,
+    "all_hundred_reports_processed": false,
+    "scope": "Suppression bounds passed on the 50 surviving reports. Fifty of 100 admitted reports expired before CPU routing; this is not a lossless 100-report burst qualification."
+  },
+  "workflows": {
+    "independent_runs": 10,
+    "runtime_successes": 9,
+    "returned_diagnoses": 9,
+    "materially_accurate_diagnoses": 6,
+    "combined_runtime_and_factual_successes": 6,
+    "required_successes": 9,
+    "observed_lifecycle_violations": 0,
+    "complete_lifecycle_scenarios": 9,
+    "incomplete_lifecycle_scenarios": 1,
+    "lifecycle_scope": "Four recorded scenario assertions and sampled stage states; not exhaustive concurrent interleavings.",
+    "failed_timeout_run": 5,
+    "router_timeout_seconds": 5.002131749992259,
+    "material_numeric_failure_runs": [
+      3,
+      8,
+      10
+    ],
+    "numeric_failure": {
+      "field": "error_rate",
+      "declared_unit": "fraction",
+      "authoritative_value": 0.45,
+      "expected_percent": 45,
+      "reported_percent": 0.45,
+      "introduced_by": "telemetry reducer summary",
+      "propagated_by": "System 2 answer"
+    },
+    "native_cpu": {
+      "calls": 1099,
+      "routed": 1098,
+      "timeouts": 1
+    },
+    "native_latency_seconds": {
+      "samples": 1099,
+      "mean": 1.3925585656806097,
+      "p95_nearest_rank": 2.1138120830000844,
+      "max": 5.002131749992259,
+      "scope": "Includes the observed timeout; CPU four-thread serial native execution. This does not establish sustained1Hz throughput."
+    },
+    "transport": {
+      "admitted": 1153,
+      "popped": 1099,
+      "expired": 0,
+      "corrupt": 0
+    },
+    "queued_after_timeout": 54,
+    "hosted_http_attempt_counts": {
+      "reducer_telemetry": 28,
+      "system1": 226,
+      "reducer_simulated_video": 27,
+      "reducer_conversation": 34,
+      "system2": 9
+    }
+  },
+  "original_p0_qualification_passed": false,
+  "publication_policy": "Curated aggregates only; original private states/traces/manifests, credentials, request/response bodies and reasoning are excluded."
+}

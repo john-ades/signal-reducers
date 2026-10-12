@@ -1,0 +1,26 @@
+# Credentials and private working material
+.env*
+!.env.example
+private/
+
+# Local environments and tooling
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.coverage
+htmlcov/
+
+# Generated reports, downloaded weights, and build artifacts
+outputs/
+models/
+dist/
+build/
+*.egg-info/

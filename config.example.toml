@@ -1,0 +1,17 @@
+[prototype]
+mode = "live"
+redis_url = "redis://127.0.0.1:6380/0"
+openrouter_url = "https://openrouter.ai/api/v1"
+reducer_model = "openai/gpt-4.1-mini"
+gate_model = "nace-ai/drex-v1.5"
+system2_model = "openai/gpt-5.1"
+laya_model = "convaiinnovations/laya-typed-decisions"
+laya_revision = "e929ae5cf69bc34259cd2f95c9e91145b818b1f0"
+laya_device = "cpu"
+laya_threads = 4
+laya_max_len = 8192
+laya_head_max_len = 256
+router_timeout = 5
+reducer_timeout = 30
+gate_timeout = 30
+system2_timeout = 90

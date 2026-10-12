@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "version": "0.1.0a1",
+  "date": "2026-10-12",
+  "scope": "Current cleaned release checks; targeted numeric and one integrated live workflow, not full model or CPU qualification.",
+  "environment": {
+    "os": "macOS",
+    "architecture": "arm64",
+    "python": "3.14.4"
+  },
+  "conformance": {
+    "tests": 250,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "duration_seconds": 18.268
+  },
+  "fixtures": {
+    "requested_runs": 10,
+    "completed_runs": 10,
+    "successful_runs": 10,
+    "lifecycle_violations": 0,
+    "passed": true
+  },
+  "live_numeric": {
+    "telemetry": {
+      "cases": 10,
+      "material_numeric_successes": 10,
+      "cases_per_rate": 5
+    },
+    "system2": {
+      "cases": 6,
+      "material_numeric_successes": 6,
+      "cases_per_thinking_level": 2
+    },
+    "fraction_to_percent": {
+      "0.45": 45,
+      "0.0045": 0.45
+    },
+    "thinking_levels": [
+      "none",
+      "some",
+      "extra"
+    ],
+    "one_attempt_each": true,
+    "system2_no_completion_budgets": true,
+    "system2_no_tools": true,
+    "structured_facts_override_adversarial_summaries": true,
+    "material_numeric_failures": 0,
+    "independent_manual_review_passed": true,
+    "telemetry_cases_with_interpretive_wording": 3,
+    "system2_cases_with_formatting_deviation": 1
+  },
+  "live_workflow": {
+    "runs": 1,
+    "runtime_successes": 1,
+    "material_factual_successes": 1,
+    "audit_checks_passed": 32,
+    "observed_lifecycle_violations": 0,
+    "lifecycle_assertions_covered": 4,
+    "scenario_stages_covered": 9,
+    "native_cpu_predictions": 117,
+    "transport": {
+      "admitted": 117,
+      "popped": 117,
+      "expired": 0,
+      "corrupt": 0
+    },
+    "http_attempts": {
+      "system1": 23,
+      "reducer_telemetry": 3,
+      "reducer_simulated_video": 3,
+      "reducer_conversation": 3,
+      "system2": 1
+    },
+    "http_status_counts": {
+      "success": 32,
+      "cancelled": 1
+    },
+    "system1_successes": 22,
+    "system1_shutdown_cancellations": 1,
+    "system2_thinking_level": "some",
+    "system2_reasoning_effort": "low",
+    "system2_one_attempt": true,
+    "system2_no_completion_budgets": true,
+    "system2_no_tools": true,
+    "repeat_pattern": "paced_one_signal_per_second",
+    "repeat_stage_http_attempts": {
+      "reducer_telemetry": 1,
+      "system1": 2,
+      "system2": 0
+    }
+  },
+  "packaging": {
+    "status": "passed",
+    "metadata_version": "2.4",
+    "license_expression": "0BSD",
+    "artifacts": [
+      "signal_reducers-0.1.0a1-py3-none-any.whl",
+      "signal_reducers-0.1.0a1.tar.gz",
+      "signal-reducers-0.1.0a1-source.tar.gz"
+    ],
+    "strict_metadata_check_passed": true,
+    "private_content_check_passed": true,
+    "broken_local_markdown_links": 0,
+    "actual_credential_matches": 0,
+    "fresh_project_smokes": 2,
+    "fully_isolated_installations": 2,
+    "hash_locked_dependencies_per_isolated_environment": 69,
+    "distributions_per_isolated_environment_including_project": 70,
+    "package_resource_files_matched_per_installation": 15,
+    "console_and_module_entrypoints_passed": true,
+    "installed_fixture_smokes_passed": 2,
+    "installed_fixture_lifecycle_violations": 0,
+    "installed_native_cpu_cache_smokes_passed": 2,
+    "native_predictions_per_cache_smoke": 1,
+    "hosted_inference_calls_during_install_checks": 0,
+    "weights_bundled": false,
+    "checksum_asset": "SHA256SUMS",
+    "local_git_branch": "main",
+    "published_externally": false,
+    "hosted_github_ci_run": false
+  },
+  "evidence": {
+    "source_manifest_files_checked": 30,
+    "source_manifest_matches": true,
+    "source_manifest_fingerprint_sha256": "eb25bc2e6a9c4949539e326784a8ee84f316978b0d8d942ad37ec093c6b4350f",
+    "selected_source_sha256": {
+      "src/signal_reducers/providers.py": "432aa61722512750b1f27c9422db22b61cb9f75172cd17febb63204093835f57",
+      "src/signal_reducers/models.py": "05c5f5f069be5cd74cdbfc76ed8e8b215cf168a427214e1623b4c438f3207702",
+      "src/signal_reducers/state.py": "1478cb6c6d0c981ded1f8739a136bac7b55c1c689f74d3c9770a364a014d2e17",
+      "src/signal_reducers/data/routing.jsonl": "041ec6daef323b8cb69df13758b5eadd694d5fc82e47d383b383c924114d33e0",
+      "uv.lock": "66b47c577bdf6fa92deb03ccc227205b70a802412610569bebfdb729ae334d03"
+    },
+    "numeric_report_sha256": "013070064f21547ac4c473aca15f42690428ab61baf90d28d441eaf171b41b80",
+    "numeric_audit_sha256": "8e76df4443807b51aa1de44b4d0a398086beb6fa923f88118b4af4b5f4d9c7f9",
+    "workflow_audit_sha256": "9bfa43733d52895a44a49549808fa2e6797681666575dd65b39de3519a25d19b",
+    "conformance_report_sha256": "61954c017ef0d1c8d672eb006dd515f7d49a65662fee862095249be27dec6496"
+  },
+  "limitations": [
+    "Targeted numeric sampling and one workflow do not establish a new ten-workflow success rate or general semantic quality.",
+    "Historical CPU throughput, timeout, and simultaneous-burst expiry limitations remain open; this is a paced workflow.",
+    "Three telemetry summaries added unsupported interpretive wording; one System 2 answer departed from requested paragraph formatting within valid bounds.",
+    "Existing historical routing accuracy is accepted for this prototype only; throughput has not been waived.",
+    "Hosted GitHub CI has not been run; Linux, Windows and PyPI publication are deferred."
+  ]
+}
